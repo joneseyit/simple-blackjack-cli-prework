@@ -46,7 +46,7 @@ def hit?(num)
   if input == "s"
     return num
   elsif input == "h"
-    return (deal_card + num)
+    return num = (deal_card + num)
   else
      invalid_command
     num
@@ -65,4 +65,19 @@ end
 
 def runner
   # code runner here
+#   Welcome the user
+# Deal them their first two cards, i.e. their initial_round
+# Ask them if they want to hit or stay
+# If they want to hit, deal another card
+# If they want to stay, ask them again!
+# If their card total exceeds 21, the game ends.
+
+welcome
+  total = initial_round
+  while total < 21
+    hit?(total)
+    display_card_total(total)
+  end
+end_game  
+
 end
